@@ -9,24 +9,10 @@ import {
 import React, { useState } from "react";
 
 const quiz = () => {
-
       const [progress, setProgress] = useState(0.09);
   return (
     <SafeAreaView>
-      <View style={styles.divBar}>
-        <TouchableOpacity
-          style={styles.backButton}
-          onPress={() => navigation.navigate("index")}
-        >
-          <Image
-            source={require("../assets/images/back-button.png")}
-            style={styles.backIcon}
-          />
-        </TouchableOpacity>
-        <View style={styles.barBackground}>
-          <View style={[styles.bar, { width: `${progress * 100}%` }]}></View>
-        </View>
-      </View>
+      <Text>Hello</Text>
     </SafeAreaView>
   );
 }
