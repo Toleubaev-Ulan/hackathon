@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { useRouter } from "expo-router";
+import kabba from "../assets/kabbamini.png";
 
 const Home = () => {
   const router = useRouter();
@@ -98,18 +99,22 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-      <View>
-        
-      </View>
+      <TouchableOpacity style={styles.question} onPress={() => router.push("/umrah")}>
+        <View style={styles.row}>
+          <Image source={kabba} style={styles.kabba} />
+          <View style={styles.column}>
+            <Text style={styles.title}>What is Umrah?</Text>
+            <View style={styles.row}></View>
+            <View style={styles.intro}>
+              <Text style={styles.introText}>Introduction</Text>
+            </View>
+          </View>
+        </View>
+      </TouchableOpacity>
       <View style={styles.progressContent}>
-        <Text style={styles.progressText}>
-          Your Progress: {progress.toFixed(2)}%
-        </Text>
+        <Text style={styles.progressText}>Your Progress: {progress.toFixed(2)}%</Text>
       </View>
-      <ScrollView
-        style={styles.scrollView}
-        showsVerticalScrollIndicator={false}
-      >
+      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         {renderSegment(1, 5, "right")}
         <View style={styles.divider} />
         {renderSegment(2, 4, "left")}
@@ -126,19 +131,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: 60,
+    height: '10%',
   },
   progressContent: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
+    position: "relative",
+    left: 12,
     backgroundColor: "#fff",
     zIndex: 1000,
-    padding: 10,
+    width: 366,
+    height: 61,
+    borderRadius: 16,
+    backgroundColor: "#11A575",
     justifyContent: "center",
     alignItems: "center",
   },
   progressText: {
+    color: "white",
     fontSize: 18,
     fontWeight: "bold",
   },
@@ -146,11 +154,15 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 60,
   },
+  kabba: {
+    // Add styles if needed
+  },
   segmentContainer: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     paddingVertical: 20,
+    backgroundColor: 'white',
   },
   extraImgContainer: {
     justifyContent: "center",
@@ -184,6 +196,41 @@ const styles = StyleSheet.create({
   text: {
     color: "black",
     fontSize: 20,
+  },
+  question: {
+    width: 365,
+    height: 70,
+    borderRadius: 16,
+    backgroundColor: "#fff",
+    position: "relative",
+    left: 12,
+    marginBottom: 12,
+  },
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingVertical: 5,
+    position: 'relative',
+    left: 8,
+  },
+  column: {
+    // Add styles if needed
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
+  intro: {
+    width: '70%',
+    backgroundColor: "#E3F5FF",
+    borderRadius: 8,
+    padding: 8,
+  },
+  introText: {
+    color: "#62B9D5",
+    fontSize: 12,
+    textAlign: 'center',
+    fontWeight: "bold",
   },
 });
 
