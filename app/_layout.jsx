@@ -8,8 +8,11 @@ const _layout = () => {
       <StatusBar style="dark" />
       <Stack>
         <Stack.Screen name="HajjDatePicker" options={{ headerShown: false }} />
-        <Stack.Screen name="main" options={{ headerShown: false }} />
-        <Stack.Screen name="details" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="start" options={{ headerShown: false }} />
+        <Stack.Screen name="preparation" options={{ headerShown: false }} />
+
+        <Stack.Screen name="umrah" options={{ headerShown: false }} />
       </Stack>
     </>
   );

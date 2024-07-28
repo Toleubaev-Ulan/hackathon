@@ -17,7 +17,7 @@ const Preparation = () => {
   return (
     <View style={styles.container}>
       <View style={styles.divBar}>
-        <TouchableOpacity style={styles.backButton} onPress={() => router.push('/main')}>
+        <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
           <Image source={cancel} style={styles.backIcon} />
         </TouchableOpacity>
         <View style={styles.barBackground}>
@@ -35,7 +35,7 @@ const Preparation = () => {
       </View>
       
       <View style={styles.bottomView}>
-        <CustomButton text="Start" color={"#11A575"} textColor={"white"}/>
+        <CustomButton text="Start" color={"#11A575"} textColor={"white"} onPress={"umrah"}/>
       </View>
 
     </View>
