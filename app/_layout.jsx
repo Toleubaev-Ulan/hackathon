@@ -3,25 +3,32 @@ import React from "react";
 import { Tabs } from "expo-router";
 import TabBar from "../components/TabBar";
 
-
 const _layout = () => {
-
   return (
-
-    <Tabs tabBar={(props) => <TabBar {...props} /> } >
-
-      <Tabs.Screen
-        name="index"
+    <Tabs tabBar={(props) => <TabBar {...props} />}>
+       <Tabs.Screen
+        name="HajjDatePicker"
         options={{
-          title: "Home",
+          title: "Hajj Date Picker",
+          headerShown: false,
         }}
       />
       <Tabs.Screen
-        name="profile"
+        name="main"
         options={{
-          title: "Profile",
+          title: "Main",
+          headerShown: false,
         }}
       />
+      <Tabs.Screen
+        name="preparation"
+        options={{
+          title: "Preparation",
+          headerShown: false,
+        }}
+      />
+     
+    
     </Tabs>
   );
 };

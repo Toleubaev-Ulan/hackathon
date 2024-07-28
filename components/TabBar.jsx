@@ -4,7 +4,7 @@ import React from 'react'
 const TabBar = () => {
   return (
     <View>
-      <Text>TabBar</Text>
+      {/* <Text>Ta÷bBar</Text> */}
     </View>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import HajjDatePicker from './counter.jsx';
+import HajjDatePicker from './HajjDatePicker.jsx';
 import { usePushNotifications } from "../useExpoNotifications";
 
 const Home = () => {
