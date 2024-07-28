@@ -13,6 +13,7 @@ const _layout = () => {
         <Stack.Screen name="preparation" options={{ headerShown: false }} />
         <Stack.Screen name="onboard" options={{ headerShown: false }} />
         <Stack.Screen name="quiz" options={{ headerShown: false }} />
+        <Stack.Screen name="nietPage" options={{ headerShown: false }} />
       </Stack>
     </>
   );
