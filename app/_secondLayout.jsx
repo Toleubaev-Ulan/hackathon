@@ -14,7 +14,7 @@ const _layout = () => {
         }}
       />
       <Tabs.Screen
-        name="main"
+        name="start"
         options={{
           title: "Main",
           headerShown: false,

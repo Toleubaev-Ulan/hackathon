@@ -1,9 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
 import HajjDatePicker from './HajjDatePicker.jsx';
-import { usePushNotifications } from "../useExpoNotifications";
+import { usePushNotifications } from "../useExpoNotifications.jsx";
 
-const Home = () => {
+const Onboard = () => {
   const { expoPushToken, notification } = usePushNotifications();
   const data = JSON.stringify(notification, undefined, 2);
 
@@ -14,4 +14,4 @@ const Home = () => {
   );
 }
 
-export default Home;
+export default Onboard;

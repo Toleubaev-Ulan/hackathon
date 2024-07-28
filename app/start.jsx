@@ -6,7 +6,7 @@ import ihram from '../assets/images/ihram.png';
 import InfoPage from "../components/InfoPage.jsx";
 
 
-const MainPage = () => {
+const Startpage = () => {
   const navigation = useNavigation();
   const router = useRouter();
 
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
  
 });
 
-export default MainPage;
+export default Startpage;
