@@ -40,16 +40,17 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   backButton: {
-    position: 'absolute',
-    width: 48,
-    height: 48,
-    top: 56,
-    left: 14,
-    // zIndex: 1,
+    // position: 'absolute',
+    // width: 48,
+    // height: 48,
+    // top: 56,
+    // left: 14,
   },
   backIcon: {
-    width: 30,
-    height: 30,
+    width: 40,
+    height: 40,
+    backgroundColor: '#ececec',
+    borderRadius: 12
   },
   content: {
     paddingBottom: 80, // Adjust to give space for the button

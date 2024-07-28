@@ -11,6 +11,8 @@ const _layout = () => {
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="start" options={{ headerShown: false }} />
         <Stack.Screen name="preparation" options={{ headerShown: false }} />
+        <Stack.Screen name="onboard" options={{ headerShown: false }} />
+        <Stack.Screen name="quiz" options={{ headerShown: false }} />
       </Stack>
     </>
   );
