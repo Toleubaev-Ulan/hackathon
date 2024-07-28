@@ -39,41 +39,60 @@ const Home = () => {
     return segmentOffsets[segment - 1] + index;
   };
 
-  const renderSegment = (segment, color, lessonCount) => (
-    <View style={[styles.segment, { backgroundColor: color }]}>
-      {Array.from({ length: lessonCount }).map((_, index) => {
-        const currentIndex = getIndex(segment, index);
-        const isVisited = visitedLessons[currentIndex];
-        const translateX = (index - lessonCount / 2) * 20; // Смещение по оси X для создания кривой
-        return (
-          <TouchableOpacity
-            key={`segment${segment}-${index}`}
-            style={[
-              styles.lesson,
-              {
-                transform: [{ translateX }],
-              },
-            ]}
-            onPress={() => handlePress(segment, index)}
-            disabled={
-              !isVisited &&
-              currentIndex !== 0 &&
-              !visitedLessons[currentIndex - 1]
-            }
-          >
-            <Image
-              source={
-                isVisited ||
-                currentIndex === 0 ||
-                visitedLessons[currentIndex - 1]
-                  ? require("../assets/step.png")
-                  : require("../assets/stepFalse.png")
+  const renderSegment = (segment, lessonCount, extraImageSide) => (
+    <View style={styles.segmentContainer}>
+      {extraImageSide === "left" && (
+        <View style={styles.extraImgContainer}>
+          <Image
+            source={require("../assets/image.png")}
+            style={styles.extraImg}
+          />
+        </View>
+      )}
+      <View style={styles.lessonsContainer}>
+        {Array.from({ length: lessonCount }).map((_, index) => {
+          const currentIndex = getIndex(segment, index);
+          const isVisited = visitedLessons[currentIndex];
+          const translateX = 20 * Math.sin(index);
+          const rotate = `rotate(${index * 10}deg)`;
+          return (
+            <TouchableOpacity
+              key={`segment${segment}-${index}`}
+              style={[
+                styles.lesson,
+                {
+                  transform: [{ translateX }, { rotate }],
+                },
+              ]}
+              onPress={() => handlePress(segment, index)}
+              disabled={
+                !isVisited &&
+                currentIndex !== 0 &&
+                !visitedLessons[currentIndex - 1]
               }
-              style={styles.stepImg}
-            />
-          </TouchableOpacity>
-        );
-      })}
+            >
+              <Image
+                source={
+                  isVisited ||
+                  currentIndex === 0 ||
+                  visitedLessons[currentIndex - 1]
+                    ? require("../assets/step.png")
+                    : require("../assets/stepFalse.png")
+                }
+                style={styles.stepImg}
+              />
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+      {extraImageSide === "right" && (
+        <View style={styles.extraImgContainer}>
+          <Image
+            source={require("../assets/image.png")}
+            style={styles.extraImg}
+          />
+        </View>
+      )}
     </View>
   );
 
@@ -88,10 +107,13 @@ const Home = () => {
         style={styles.scrollView}
         showsVerticalScrollIndicator={false}
       >
-        {renderSegment(1, "red", 5)}
-        {renderSegment(2, "blue", 4)}
-        {renderSegment(3, "green", 3)}
-        {renderSegment(4, "yellow", 2)}
+        {renderSegment(1, 5, "right")}
+        <View style={styles.divider} />
+        {renderSegment(2, 4, "left")}
+        <View style={styles.divider} />
+        {renderSegment(3, 3, "right")}
+        <View style={styles.divider} />
+        {renderSegment(4, 2, "left")}
       </ScrollView>
     </View>
   );
@@ -121,10 +143,19 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 60,
   },
-  segment: {
+  segmentContainer: {
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     paddingVertical: 20,
+  },
+  extraImgContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  lessonsContainer: {
+    justifyContent: "center",
+    alignItems: "center",
   },
   lesson: {
     marginVertical: 20,
@@ -133,6 +164,19 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     resizeMode: "contain",
+  },
+  extraImg: {
+    width: 50,
+    height: 50,
+    resizeMode: "contain",
+    marginHorizontal: 10,
+  },
+  divider: {
+    height: 1,
+    backgroundColor: "gray",
+    width: "80%",
+    alignSelf: "center",
+    marginVertical: 20,
   },
   text: {
     color: "black",
