@@ -133,12 +133,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: 60,
+    padding: 20,
     height: '10%',
     // backgroundColor: "#fff"
   },
   progressContent: {
     position: "relative",
     left: 12,
+    backgroundColor: "#fff",
     zIndex: 1000,
     width: 366,
     height: 61,
@@ -146,13 +148,17 @@ const styles = StyleSheet.create({
     backgroundColor: "#11A575",
     justifyContent: "center",
     alignItems: "center",
+    padding: 20,
   },
   progressText: {
     color: "white",
     fontSize: 18,
     fontWeight: "bold",
   },
-  
+  scrollView: {
+    flex: 1,
+    marginTop: 60,
+  },
   kabba: {
     // Add styles if needed
   },
@@ -160,8 +166,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    paddingVertical: 20,
-    backgroundColor: 'white',
+    marginTop: 10
   },
   extraImgContainer: {
     justifyContent: "center",
@@ -197,24 +202,22 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   question: {
-    width: 365,
-    height: 70,
     borderRadius: 16,
     backgroundColor: "#fff",
-    position: "relative",
-    left: 12,
-    marginBottom: 12,
+    padding: 16,
+    marginBottom: 16,
   },
   row: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 5,
-    position: 'relative',
-    left: 8,
+  },
+  column: {
+    // Add styles if needed
   },
   title: {
     fontWeight: 'bold',
     fontSize: 18,
+    marginBottom: 10
   },
   intro: {
     width: '70%',

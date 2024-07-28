@@ -46,7 +46,8 @@ const quiz = () => {
           
         />
       </View>
-    </SafeAreaView>
+
+ </SafeAreaView>
   );
 };
 

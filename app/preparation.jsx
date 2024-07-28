@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   content: {
-    paddingHorizontal: 14,
+    paddingHorizontal: 20,
   },
   titleView: {
     justifyContent: "center",
