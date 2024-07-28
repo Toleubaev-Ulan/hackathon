@@ -28,22 +28,13 @@ const HajjDatePicker = () => {
           display="spinner"
           onChange={onChange}
         />
-      
-      {/* <Button
-        style={styles.skipbtn}
-        title='Skip'
-        onPress={() => setIsSkipping(!isSkipping)}
-      />
-      <Button title="Save" onPress={handleSave} /> */}
-
-
       </View>
       
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.skipbtn} onPress={() => router.push('/main')}>
           <Text style={styles.skipbuttonText}>Skip</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.button, styles.marginTop]} onPress={() => router.push('/main')}>
+        <TouchableOpacity style={[styles.button, styles.marginTop]} onPress={() => router.push('/index')}>
           <Text style={styles.buttonText}>Start</Text>
         </TouchableOpacity>
       </View>
@@ -63,8 +54,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   selectContainer: {
-    // flex:1,
-    // justifyContent: 'center'
   },
   skipbtn: {
     width: '100%',

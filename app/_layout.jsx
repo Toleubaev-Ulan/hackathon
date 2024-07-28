@@ -7,7 +7,8 @@ const _layout = () => {
     <>
       <StatusBar style="dark" />
       <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="HajjDatePicker" options={{ headerShown: false }} />
+        <Stack.Screen name="main" options={{ headerShown: false }} />
         <Stack.Screen name="details" options={{ headerShown: false }} />
       </Stack>
     </>
