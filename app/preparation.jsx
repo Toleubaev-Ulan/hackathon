@@ -17,7 +17,7 @@ const Preparation = () => {
   return (
     <View style={styles.container}>
       <View style={styles.divBar}>
-        <TouchableOpacity style={styles.backButton} onPress={() => router.push('/main')}>
+        <TouchableOpacity style={styles.backButton} onPress={() => router.push('/index')}>
           <Image source={cancel} style={styles.backIcon} />
         </TouchableOpacity>
         <View style={styles.barBackground}>

@@ -31,7 +31,7 @@ const HajjDatePicker = () => {
       </View>
       
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.skipbtn} onPress={() => router.push('/main')}>
+        <TouchableOpacity style={styles.skipbtn} onPress={() => router.push('/index')}>
           <Text style={styles.skipbuttonText}>Skip</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.button, styles.marginTop]} onPress={() => router.push('/index')}>

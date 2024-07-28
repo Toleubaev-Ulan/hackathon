@@ -23,7 +23,7 @@ const Home = () => {
 
       const progressValue = calculateProgress(currentIndex);
       setProgress(progressValue);
-      router.push("/details");
+      router.push("/start");
     } else {
       alert("Вы не можете перейти к этому уроку, не посетив предыдущий.");
     }
