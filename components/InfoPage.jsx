@@ -26,7 +26,7 @@ const InfoPage = ({ img, title, description }) => {
         </View>
       </View>
       <View style={styles.buttonContainer}>
-        <CustomButton text="Start" color="#11A575" textColor="white" onPress={'preparation'} />
+        <CustomButton text="Start" color="#11A575" textColor="white" onPress={'quiz'} />
       </View>
     </View>
   );

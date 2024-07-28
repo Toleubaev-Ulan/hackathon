@@ -111,9 +111,11 @@ const Home = () => {
           </View>
         </View>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => router.push("/")}>
       <View style={styles.progressContent}>
         <Text style={styles.progressText}>Your Progress: {progress.toFixed(2)}%</Text>
       </View>
+      </TouchableOpacity>
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         {renderSegment(1, 5, "right")}
         <View style={styles.divider} />
@@ -132,11 +134,11 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 60,
     height: '10%',
+    // backgroundColor: "#fff"
   },
   progressContent: {
     position: "relative",
     left: 12,
-    backgroundColor: "#fff",
     zIndex: 1000,
     width: 366,
     height: 61,
@@ -150,10 +152,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
   },
-  scrollView: {
-    flex: 1,
-    marginTop: 60,
-  },
+  
   kabba: {
     // Add styles if needed
   },
@@ -212,9 +211,6 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     position: 'relative',
     left: 8,
-  },
-  column: {
-    // Add styles if needed
   },
   title: {
     fontWeight: 'bold',
