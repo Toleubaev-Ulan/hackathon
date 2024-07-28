@@ -1,24 +1,16 @@
-import { View, Text } from "react-native";
 import React from "react";
-import { Tabs } from "expo-router";
-import TabBar from "../components/TabBar";
+import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 
 const _layout = () => {
   return (
-    <Tabs tabBar={(props) => <TabBar {...props} /> } >
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: "Home",
-        }}
-      />
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: "Profile",
-        }}
-      />
-    </Tabs>
+    <>
+      <StatusBar style="dark" />
+      <Stack>
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="details" options={{ headerShown: false }} />
+      </Stack>
+    </>
   );
 };
 
